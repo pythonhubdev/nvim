@@ -18,7 +18,7 @@ return {
 		-- Keymaps
 		vim.keymap.set("n", "<leader>ss", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root directory" })
 		vim.keymap.set("n", "<leader>sr", "<cmd>SessionRestore<CR>", { desc = "Restore session for current working directory" })
-		vim.keymap.set("n", "<leader>sl", "<cmd>SessionSearch<CR>", { desc = "Search throught the list of available sessions" })
+		vim.keymap.set("n", "<leader>sl", "<cmd>SessionSearch<CR>", { desc = "Search throughout the list of available sessions" })
 	end,
 }
 

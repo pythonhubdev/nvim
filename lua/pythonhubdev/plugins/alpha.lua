@@ -62,13 +62,7 @@ return {
 		}
 
 		dashboard.section.footer.val = "“I'm going to be King of the Pirates!” – Monkey D. Luffy"
-
-		-- vim.cmd([[
-		-- 	highlight AlphaHeader guifg=#FFD700
-		-- 	highlight AlphaButtons guifg=#87CEEB
-		-- 	highlight AlphaFooter guifg=#FFD700
-		-- ]])
-		-- Apply the customized config
+	
 		alpha.setup(dashboard.config)
 		alpha.setup(dashboard.opts)
 
