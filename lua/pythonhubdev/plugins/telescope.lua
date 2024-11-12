@@ -43,7 +43,7 @@ return {
 
 		-- Load the FZF extension
 		require("telescope").load_extension("fzf")
-		require("telescopt").load_extension("noice")
+		require("telescope").load_extension("noice")
 		local keymaps = {
 
 			-- Normal Mode
