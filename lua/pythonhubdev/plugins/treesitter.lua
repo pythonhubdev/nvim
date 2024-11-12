@@ -19,6 +19,10 @@ return {
 				"toml", -- TOML
 				"yaml", -- YAML
 			},
+			auto_install = true,
+			sync_install = false,
+			ignore_install = {},
+			modules = {},
 			highlight = {
 				enable = true, -- Enable Treesitter-based syntax highlighting
 				additional_vim_regex_highlighting = false, -- Disable Vim's regex-based highlighting for performance

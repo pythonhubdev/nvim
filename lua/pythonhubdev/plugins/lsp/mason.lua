@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		"jay-babu/mason-nvim-dap.nvim",
 	},
 	config = function()
 		local mason = require("mason")
@@ -10,6 +11,8 @@ return {
 		local mason_lsp = require("mason-lspconfig")
 
 		local mason_tool_installer = require("mason-tool-installer")
+
+		local mason_nvim_dap = require("mason-nvim-dap")
 
 		mason.setup({
 
@@ -37,7 +40,7 @@ return {
 				"html",
 				"lua_ls",
 				"markdown_oxide",
-				"pylyzer",
+				"pyright",
 				"ruff",
 				"rust_analyzer",
 				"sqls",
@@ -55,8 +58,9 @@ return {
 				"taplo",
 				"yq",
 				"editorconfig-checker",
-				"pylyzer",
 			},
 		})
+
+		mason_nvim_dap.setup({})
 	end,
 }

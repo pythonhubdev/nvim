@@ -54,6 +54,7 @@ return {
 				["<leader>fg"] = { "<cmd>Telescope live_grep<CR>", "Find string in current working directory" },
 				["<leader>fb"] = { "<cmd>Telescope buffers<CR>", "Open Buffers" },
 				["<leader>fh"] = { "<cmd>Telescope help_tags<CR>", "Help Tags" },
+				["<leader>fn"] = { "<cmd>Noice telescope<CR>", "Find notifications history" },
 			},
 		}
 
