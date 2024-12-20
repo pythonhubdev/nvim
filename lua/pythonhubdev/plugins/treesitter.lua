@@ -2,7 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	event = { "BufReadPre", "BufNewFile" },
 	build = ":TSUpdate",
-	dependencies = { "windwp/nvim-ts-autotag", "HiPhish/rainbow-delimiters.nvim" },
+	dependencies = { "HiPhish/rainbow-delimiters.nvim" },
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
@@ -37,10 +37,27 @@ return {
 				},
 			},
 			indent = {
-				enable = true, -- Enable Treesitter-based indentation
+				enable = true, -- Enable Treesitter based indentation
 			},
 			autotag = {
 				enable = true, -- Automatically close and rename HTML tags
+				filetypes = {
+					"html",
+					"xml",
+					"javascript",
+					"typescript",
+					"typescriptreact",
+					"javascriptreact",
+					"svelte",
+					"vue",
+					"jsx",
+					"tsx",
+					"python",
+					"rust",
+					"lua",
+					"css",
+					"markdown",
+				},
 			},
 			rainbow = {
 				enable = true, -- Enable rainbow parentheses for better visual separation

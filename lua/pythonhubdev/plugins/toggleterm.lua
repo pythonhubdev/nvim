@@ -4,7 +4,7 @@ return {
 	config = function()
 		local toggleterm = require("toggleterm")
 		toggleterm.setup({
-			open_mapping = [[<c-\>]],
+			open_mapping = [[<leader>tt]],
 		})
 	end,
 }

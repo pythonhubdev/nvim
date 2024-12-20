@@ -6,9 +6,9 @@ return {
 
 		lint.linters_by_ft = {
 			javascript = { "biomejs" },
-			typescript = { "biome" },
-			javascriptreact = { "biome" },
-			typescriptreact = { "biome" },
+			typescript = { "biomejs" },
+			javascriptreact = { "biomejs" },
+			typescriptreact = { "biomejs" },
 			python = { "ruff", "mypy" },
 			editorconfig = { "editorconfig-checker" },
 			yaml = { "yq" },
