@@ -1,6 +1,6 @@
 return {
 	"stevearc/oil.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "nvim-tree/nvim-web-devicons", "echasnovski/mini.icons" },
 	-- Configuration
 	config = function()
 		require("oil").setup({
@@ -13,6 +13,10 @@ return {
 			view_options = {
 				show_hidden = true,
 				natural_order = true,
+			},
+			win_options = {
+				signcolumn = "yes:1",
+				statuscolumn = "",
 			},
 			keymaps = {
 				["<leader>ev"] = { "actions.select", opts = { vertical = true }, desc = "Open in vertical split" },
