@@ -48,38 +48,48 @@ return {
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
 			},
 			formatting = {
-				format = lspkind.cmp_format({
-					mode = "symbol_text", -- Show symbol and text
-					maxwidth = 50, -- Prevent the popup from showing more than provided characters
-					ellipsis_char = "...", -- When popup menu exceeds maxwidth, the truncated part would show ellipsis_char instead
-					symbol_map = {
-						Text = "󰉿", -- Document text symbol
-						Method = "", -- Wrench and gear for methods
-						Function = "󰊕", -- Function icon
-						Constructor = "", -- Blueprint or builder icon
-						Field = "", -- Dot grid for fields
-						Variable = "", -- Box for variables
-						Class = "", -- Building icon for classes
-						Interface = "", -- Connected dots for interfaces
-						Module = "", -- Module box
-						Property = "", -- House or home icon for properties
-						Unit = "", -- Units or tools icon
-						Value = "", -- Value tag or badge icon
-						Enum = "", -- List icon for enums
-						Keyword = "", -- Key symbol for keywords
-						Snippet = "", -- Scissors for snippets
-						Color = "", -- Palette for color properties
-						File = "", -- Document icon for files
-						Reference = "", -- Link or chain for references
-						Folder = "", -- Folder icon
-						EnumMember = "", -- Circle list icon for enum members
-						Constant = "", -- Constants symbol or badge
-						Struct = "", -- 3D box or struct icon
-						Event = "", -- Lightning bolt for events
-						Operator = "", -- Cog for operators
-						TypeParameter = "", -- Tag for type parameters
-					},
-				}),
+				format = function(entry, item)
+					local colorizer = require("nvim-highlight-colors")
+					colorizer.format(entry, { kind = item.kind })
+					item = lspkind.cmp_format({
+						mode = "symbol_text", -- Show symbol and text
+						maxwidth = 50, -- Prevent the popup from showing more than provided characters
+						ellipsis_char = "...", -- When popup menu exceeds maxwidth, the truncated part would show ellipsis_char instead
+						symbol_map = {
+							Text = "󰉿", -- Document text symbol
+							Method = "", -- Wrench and gear for methods
+							Function = "󰊕", -- Function icon
+							Constructor = "", -- Blueprint or builder icon
+							Field = "", -- Dot grid for fields
+							Variable = "", -- Box for variables
+							Class = "", -- Building icon for classes
+							Interface = "", -- Connected dots for interfaces
+							Module = "", -- Module box
+							Property = "", -- House or home icon for properties
+							Unit = "", -- Units or tools icon
+							Value = "", -- Value tag or badge icon
+							Enum = "", -- List icon for enums
+							Keyword = "", -- Key symbol for keywords
+							Snippet = "", -- Scissors for snippets
+							Color = "", -- Palette for color properties
+							File = "", -- Document icon for files
+							Reference = "", -- Link or chain for references
+							Folder = "", -- Folder icon
+							EnumMember = "", -- Circle list icon for enum members
+							Constant = "", -- Constants symbol or badge
+							Struct = "", -- 3D box or struct icon
+							Event = "", -- Lightning bolt for events
+							Operator = "", -- Cog for operators
+							TypeParameter = "", -- Tag for type parameters
+						},
+					})(entry, item)
+
+					if colorizer.allr_hl_group then
+						item.kind_hl_group = colorizer.abbr_hl_group
+						item.kind = colorizer.abbr
+					end
+					return item
+				end,
 			},
 		})
 	end,
