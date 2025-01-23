@@ -46,6 +46,7 @@ return {
 				"sqls",
 				"tailwindcss",
 				"ts_ls",
+				"prismals",
 			},
 			automatic_install = true,
 		})
