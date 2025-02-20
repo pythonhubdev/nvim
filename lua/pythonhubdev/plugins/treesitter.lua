@@ -39,26 +39,6 @@ return {
 			indent = {
 				enable = true, -- Enable Treesitter based indentation
 			},
-			autotag = {
-				enable = true, -- Automatically close and rename HTML tags
-				filetypes = {
-					"html",
-					"xml",
-					"javascript",
-					"typescript",
-					"typescriptreact",
-					"javascriptreact",
-					"svelte",
-					"vue",
-					"jsx",
-					"tsx",
-					"python",
-					"rust",
-					"lua",
-					"css",
-					"markdown",
-				},
-			},
 			rainbow = {
 				enable = true, -- Enable rainbow parentheses for better visual separation
 				extended_mode = true, -- Highlight non-bracket delimiters (like HTML tags)
