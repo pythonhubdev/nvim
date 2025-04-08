@@ -8,6 +8,17 @@ return {
 		local flutter_tools = require("flutter-tools")
 
 		flutter_tools.setup({
+			ui = {
+				border = "rounded",
+				notfication_style = "plugin",
+			},
+			decorations = {
+				statusline = {
+					app_version = false,
+					device = false,
+					project_config = false,
+				},
+			},
 			debugger = {
 				enabled = true,
 				run_via_dap = true,

@@ -64,5 +64,8 @@ return {
 				vim.api.nvim_set_keymap(mode, keys, map[1], { noremap = true, silent = true, desc = map[2] })
 			end
 		end
+
+		-- Flutter extensions
+		require("telescope").load_extension("flutter")
 	end,
 }

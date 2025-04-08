@@ -17,6 +17,7 @@ return {
 				toml = { "taplo" },
 				lua = { "stylua" },
 				yaml = { "yq" },
+				tailwindcss = { "rustywind" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
