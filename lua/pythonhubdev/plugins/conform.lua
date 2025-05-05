@@ -18,6 +18,7 @@ return {
 				lua = { "stylua" },
 				yaml = { "yq" },
 				tailwindcss = { "rustywind" },
+				sql = { "sqruff" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
