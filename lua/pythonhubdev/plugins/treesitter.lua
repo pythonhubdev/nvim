@@ -2,7 +2,6 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	event = { "BufReadPre", "BufNewFile" },
 	build = ":TSUpdate",
-	dependencies = { "HiPhish/rainbow-delimiters.nvim" },
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
@@ -38,11 +37,6 @@ return {
 			},
 			indent = {
 				enable = true, -- Enable Treesitter based indentation
-			},
-			rainbow = {
-				enable = true, -- Enable rainbow parentheses for better visual separation
-				extended_mode = true, -- Highlight non-bracket delimiters (like HTML tags)
-				max_file_lines = 1000, -- Disable for large files
 			},
 		})
 	end,
