@@ -72,13 +72,13 @@ return {
 				desc = "Go to previous diagnostic",
 				mode = "n",
 				keys = "[d",
-				cmd = vim.diagnostic.goto_prev,
+				cmd = vim.diagnostic.get_prev,
 			},
 			{
 				desc = "Go to next diagnostic",
 				mode = "n",
 				keys = "]d",
-				cmd = vim.diagnostic.goto_next,
+				cmd = vim.diagnostic.get_next,
 			},
 			{
 				desc = "Show documentation for what is under cursor",
@@ -119,45 +119,5 @@ return {
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
-
-		mason_lsp_config.setup({
-			-- Default handler for installed servers
-			function(server_name)
-				lsp_config[server_name].setup({
-					capabilities = capabilities,
-				})
-			end,
-			["lua_ls"] = function()
-				-- Configure lua server (with special settings)
-				lsp_config["lua_ls"].setup({
-					capabilities = capabilities,
-					settings = {
-						Lua = {
-							-- Make the language server recognize "vim" global
-							diagnostics = {
-								globals = { "vim" },
-							},
-							completion = {
-								callSnippet = "Replace",
-							},
-						},
-					},
-				})
-			end,
-		})
-
-		-- Set up pyright with project-specific configuration
-		lsp_config.pyright.setup({
-			settings = {
-				python = {
-					analysis = {
-						autoSearchPaths = true,
-						useLibraryCodeForTypes = true,
-						diagnosticMode = "workspace",
-						extraPaths = { "src" },
-					},
-				},
-			},
-		})
 	end,
 }
