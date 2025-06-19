@@ -38,6 +38,7 @@ return {
 				"graphql",
 				"harper_ls",
 				"html",
+				"svelte",
 				"lua_ls",
 				"markdown_oxide",
 				"pyright",
