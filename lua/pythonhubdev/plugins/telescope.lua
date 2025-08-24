@@ -29,7 +29,7 @@ return {
 				},
 				sorting_strategy = "ascending", -- Sort results in ascending order
 				color_devicons = true, -- Enable color icons
-				file_ignore_patterns = { "node_modules" }, -- Ignore specific directories
+				file_ignore_patterns = { "node_modules", ".git" }, -- Ignore specific directories
 			},
 			extensions = {
 				fzf = {
@@ -48,7 +48,10 @@ return {
 
 			-- Normal Mode
 			n = {
-				["<leader>ff"] = { "<cmd>Telescope find_files<CR>", "Find Files in current working directory" },
+				["<leader>ff"] = {
+					"<cmd>Telescope find_files cwd=. hidden=true<CR>",
+					"Find Files in current working directory",
+				},
 				["<leader>fr"] = { "<cmd>Telescope oldfiles<CR>", "Find Recent Files" },
 				["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "Find string in current open file" },
 				["<leader>fg"] = { "<cmd>Telescope live_grep<CR>", "Find string in current working directory" },
