@@ -7,7 +7,6 @@ return {
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 		-- input providers (optional, pick one)
-		"stevearc/dressing.nvim",
 		"folke/snacks.nvim",
 		-- selector providers (optional, pick one)
 		"ibhagwan/fzf-lua",

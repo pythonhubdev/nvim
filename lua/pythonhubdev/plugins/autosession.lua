@@ -3,7 +3,9 @@ return {
 	config = function()
 		-- Configuration
 		require("auto-session").setup({
-			auto_restore_enabled = false,
+			enabled = true,
+			auto_save = true,
+			auto_restore_enabled = true,
 			auto_session_supress_dirs = { "~/", "~/Downloads", "/" },
 			session_lens = {
 				load_on_setup = true, -- Initialize on startup (requires Telescope)
