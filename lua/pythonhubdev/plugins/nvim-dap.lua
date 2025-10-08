@@ -50,7 +50,7 @@ return {
 
 		-- Python Configuration
 		require("dap-python").test_runner = "pytest"
-		require("dap-python").setup()
+		require("dap-python").setup("uv")
 
 		-- JavaScript / TypeScript configuration
 		require("dap-vscode-js").setup({

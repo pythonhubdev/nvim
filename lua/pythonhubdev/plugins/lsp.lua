@@ -2,17 +2,12 @@ return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{ "folke/lazydev.nvim", opts = {} },
+		{ "folke/lazydev.nvim", opts = {
+			ft = "lua",
+		} },
 	},
 	config = function()
-		local lsp_config = require("lspconfig")
-
-		local mason_lsp_config = require("mason-lspconfig")
-
-		local cmp_vim_lsp = require("cmp_nvim_lsp")
-
 		local keymaps = {
 			{
 				desc = "Show LSP references",
@@ -98,6 +93,8 @@ return {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
+				local client = vim.lsp.get_client_by_id(ev.data.client_id)
+				vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
 				local opts = { buffer = ev.buf, silent = true }
 				for _, map in ipairs(keymaps) do
 					opts.desc = map.desc
@@ -106,18 +103,18 @@ return {
 			end,
 		})
 
-		-- Used to enable auto-completion (assign to every lsp server config)
-		local capabilities = cmp_vim_lsp.default_capabilities()
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-		local signs = {
-			Error = "✘", -- Error sign
-			Warn = "", -- Warning sign
-			Hint = "💡", -- Hint sign
-			Info = "ℹ️", -- Information sign
-		}
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
+		vim.diagnostic.config({
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = "✘",
+					[vim.diagnostic.severity.WARN] = "",
+					[vim.diagnostic.severity.INFO] = "💡",
+					[vim.diagnostic.severity.HINT] = "ℹ️",
+				},
+			},
+		})
 	end,
 }

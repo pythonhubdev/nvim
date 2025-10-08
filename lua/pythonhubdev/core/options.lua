@@ -38,7 +38,7 @@ local options = {
 	splitright = true, -- Split windows vertically
 
 	-- Completion options
-	completeopt = { "menuone", "noinsert", "noselect", "preview" }, -- Show completions even for one match along with additional information
+	completeopt = { "menu", "fuzzy", "popup", "menuone", "noinsert", "noselect", "preview" }, -- Show completions even for one match along with additional information
 	pumheight = 10, -- Max number of items in the completion popup menu
 
 	-- File encoding

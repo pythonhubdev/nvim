@@ -26,28 +26,28 @@ return {
 		})
 
 		mason_lsp.setup({
-
 			ensure_installed = {
-				"ast_grep",
 				"biome",
 				"clangd",
 				"cssls",
-				"css_variables",
 				"dockerls",
+				"docker_language_server",
 				"docker_compose_language_service",
-				"graphql",
+				"golangci_lint_ls",
 				"harper_ls",
-				"html",
-				"svelte",
+				"jinja_lsp",
+				"jsonls",
 				"lua_ls",
 				"markdown_oxide",
-				"pyright",
 				"ruff",
 				"rust_analyzer",
+				"superhtml",
+				"svelte",
 				"sqls",
+				"sqruff",
 				"tailwindcss",
+				"taplo",
 				"ts_ls",
-				"prismals",
 			},
 			automatic_install = true,
 		})
@@ -55,14 +55,22 @@ return {
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"biome",
-				"stylua",
+				"dotenv-linter",
+				"editorconfig-checker",
+				"golangci-lint",
+				"jinja_lsp",
 				"ruff",
+				"stylua",
 				"taplo",
 				"yq",
-				"editorconfig-checker",
+				"zuban",
 			},
 		})
 
-		mason_nvim_dap.setup({})
+		mason_nvim_dap.setup({
+			ensure_installed = { "dart", "js", "python", "stylua" },
+			handlers = {},
+			automatic_installation = true,
+		})
 	end,
 }
