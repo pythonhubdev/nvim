@@ -115,6 +115,21 @@ return {
 					[vim.diagnostic.severity.HINT] = "ℹ️",
 				},
 			},
+			virtual_text = {
+				source = "if_many",
+				prefix = "■",
+				spacing = 4,
+			},
+			underline = true,
+			severity_sort = true,
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = "if_many",
+				header = "",
+				prefix = "",
+			},
 		})
 	end,
 }
