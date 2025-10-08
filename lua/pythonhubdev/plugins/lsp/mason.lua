@@ -27,6 +27,7 @@ return {
 
 		mason_lsp.setup({
 			ensure_installed = {
+				"basedpyright",
 				"biome",
 				"clangd",
 				"cssls",

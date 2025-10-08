@@ -1,6 +1,7 @@
 require("pythonhubdev.core")
 require("pythonhubdev.lazy")
 
+vim.lsp.enable("basedpyright")
 vim.lsp.enable("biome")
 vim.lsp.enable("clangd")
 vim.lsp.enable("cssls")
