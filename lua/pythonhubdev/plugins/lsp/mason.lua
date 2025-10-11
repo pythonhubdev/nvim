@@ -34,6 +34,7 @@ return {
 				"dockerls",
 				"docker_language_server",
 				"docker_compose_language_service",
+				"gopls",
 				"golangci_lint_ls",
 				"harper_ls",
 				"jinja_lsp",
@@ -49,6 +50,7 @@ return {
 				"tailwindcss",
 				"taplo",
 				"ts_ls",
+				"yamlls",
 			},
 			automatic_install = true,
 		})
@@ -63,7 +65,7 @@ return {
 				"ruff",
 				"stylua",
 				"taplo",
-				"yq",
+				"yamllint",
 				"zuban",
 			},
 		})

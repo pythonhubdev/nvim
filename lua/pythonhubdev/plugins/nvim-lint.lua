@@ -9,9 +9,9 @@ return {
 			typescript = { "biomejs" },
 			javascriptreact = { "biomejs" },
 			typescriptreact = { "biomejs" },
-			python = { "ruff", "mypy" },
+			python = { "ruff" },
 			editorconfig = { "editorconfig-checker" },
-			yaml = { "yq" },
+			yaml = { "yamllint" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

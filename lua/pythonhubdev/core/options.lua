@@ -16,6 +16,7 @@ local options = {
 	tabstop = 4, -- Number of spaces a tab counts for
 	shiftwidth = 4, -- Number of spaces for indentation
 	smartindent = true, -- Auto indents new line
+	softtabstop = 4, -- Number of spaces a tab counts a while editing
 	wrap = false, -- Disable line wrapping
 	-- Clipboard
 	clipboard = "unnamedplus", -- Use the system clipboard,

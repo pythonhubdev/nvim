@@ -16,7 +16,7 @@ return {
 				python = { "ruff" },
 				toml = { "taplo" },
 				lua = { "stylua" },
-				yaml = { "yq" },
+				yaml = { "yamlfmt" },
 				tailwindcss = { "rustywind" },
 				sql = { "sqruff" },
 			},
