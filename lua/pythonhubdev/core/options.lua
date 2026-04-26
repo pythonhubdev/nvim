@@ -54,6 +54,7 @@ local options = {
 
 	-- Backspace
 	backspace = "indent,eol,start",
+
 }
 
 for key, value in pairs(options) do
@@ -62,14 +63,14 @@ end
 
 -- Additional Configurations for Auto-Save
 -- Auto-save every few seconds during edit
-vim.api.nvim_exec(
+vim.api.nvim_exec2(
 	[[
   augroup autosave
     autocmd!
     autocmd CursorHold,InsertLeave * silent! wall
   augroup END
 ]],
-	false
+	{}
 )
 
 vim.opt.updatetime = 60000 -- 1 minute delay before triggering CursorHold event
